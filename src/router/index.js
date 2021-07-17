@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Main from '../views/Main'
+import Comment from '../views/Comment'
 import SavePermanent from '../views/SavePermanent'
 import NotFound from '../views/NotFound'
 //import Form from '../views/Form.vue';
@@ -15,16 +16,18 @@ export default new Router({
       component: Main,
       props: true,
       children:[
-        {path:'/post/save', name:'SavePermanent', component:SavePermanent, props: true}
+        {path:'/post/save', name:'SavePermanent', component:SavePermanent, props: true},
+        {path:'/comment', name:'Comment', component:Comment, props:true}
       ]
-            /* children:[
-                {path: '/user/profile/:id', name: 'UserProfile', component: UserProfile, props: true},
-                {path: '/user/list', component: UserList}
-            ] */
     },
     {
       path:'/:id',
       component: SavePermanent
+    },
+    {
+      path:'/comment',
+      component:Comment,
+      props:true
     },
     {
       path: '/goHome',

@@ -1,3 +1,4 @@
+<!-- 试验（忽略此vue文件即可） -->
 <template>
     <div>
         <el-form ref="form" :model="sizeForm" label-width="80px" size="small">
